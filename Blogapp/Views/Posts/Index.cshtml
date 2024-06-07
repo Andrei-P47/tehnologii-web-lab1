@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BlogApp.Models.Post>
+
+@{
+    ViewBag.Title = "Postări";
+}
+
+<h2>Postări</h2>
+
+<p>
+    @Html.ActionLink("Crează Postare Nouă", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Titlu</th>
+        <th>Conținut</th>
+        <th>Data Creării</th>
+    </tr>
+
+    <!-- Iterează prin fiecare postare din modelul transmis -->
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td>@item.CreatedAt</td>
+        </tr>
+    }
+</table>
